@@ -145,4 +145,56 @@ b-content {
   justify-content: space-between;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+/* Main section */
+main {
+  font-family: "Lato", sans-serif;
+}
+main .cards-section {
+  padding: 150px 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
+  row-gap: 150px;
+  justify-items: center;
+}
+main .cards-section .card {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+}
+main .cards-section .card .card-images {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+main .cards-section .card .content {
+  border: 1px solid black;
+  border-top: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+main .cards-section .card .content .name-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .cards-section .card .content .number-of-likes {
+  margin-left: auto;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+main .cards-section .card .content .comment {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+}
+main .cards-section .card .content .comment:hover {
+  cursor: pointer;
 }/*# sourceMappingURL=style.css.map */
