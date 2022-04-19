@@ -1,0 +1,151 @@
+html {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+body { 
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden;
+}
+
+header {
+  font-family: 'Leto', sans-serif;
+  display: flex;
+  justify-content: center;
+  }
+  
+  .menu-bar {
+    border-radius: 25px;
+    height: fit-content;
+    display: inline-flex;
+    background-color: rgba(0, 0, 0, .4);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);  
+    align-items: center;
+    padding: 0 10px;
+    margin: 50px 0 0 0;
+
+    li {
+      list-style: none;
+      color: white;
+      font-family: sans-serif;
+      font-weight: bold;
+      padding: 12px 16px;
+      margin: 0 8px;
+      position: relative;
+      cursor: pointer;
+      white-space: nowrap;
+
+      &::before {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left:0;
+        height:100%;
+        width: 100%;
+        z-index:-1;
+        transition: .2s;
+        border-radius: 25px;
+      }
+
+        &:hover {
+          &::before {
+            background: linear-gradient(to bottom, #e8edec, #d2d1d3);
+              box-shadow: 0px 3px 20px 0px black;
+              transform: scale(1.2);
+          }
+          color: black;
+      }
+    }
+  }
+  
+  b-content {
+    position: relative;
+    z-index: -1;
+  }
+
+.b-btn,
+.b-button { 
+  border:none;
+  display:inline-block;
+  outline:0;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow:hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap
+}
+
+.b-btn,
+.b-button {
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none; 
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select:none;
+} 
+
+.b-disabled,
+.b-btn:disabled,
+.b-button:disabled {
+  cursor:not-allowed;
+  opacity:0.3
+}
+
+.b-disabled *,
+:disabled *{
+  pointer-events: none
+}
+
+.b-bar-block .b-dropdown-hover .b-button,
+.b-bar-block .b-dropdown-click .b-button {
+  width:100%;
+  text-align: left;
+  padding: 8px 16px
+}
+
+.b-button:hover {
+  color: #000 !important;
+  background-color: #ccc !important;
+}
+
+.b-content button {
+  position: absolute;
+  top: 32%;
+}
+
+.b-display-right {
+  right:0
+}
+
+.b-display-left {
+  left:0
+}
+
+.mySlides {
+  width: 100vw;
+  height: 100vh;
+}
+
+.navbar {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
