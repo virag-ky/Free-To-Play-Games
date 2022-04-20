@@ -313,12 +313,123 @@ footer a {
 .popup {
   width: 85vw;
   height: 90vh;
-  padding: 1.8rem 1.2rem 1rem 1.2rem;
-  background-color: #f3f1f1;
+  padding: 30px 50px;
+  background-color: #2e3130;
   position: fixed;
   top: 50%;
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  border-radius: 20px;
+  overflow-y: scroll;
+  color: #d2d1d3;
+}
+
+.popup .exit {
+  background: transparent;
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 2rem;
+  color: #d2d1d3;
+}
+
+.popup .exit:hover {
+  cursor: pointer;
+}
+
+.popup img {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.popup h2 {
+  font-size: 2.8rem;
+}
+
+.popup p {
+  font-size: 1.5rem;
+}
+
+.popup h3 {
+  font-size: 1.6rem;
+}
+
+.popup ul > li {
+  list-style: none;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.popup form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+.popup form h4 {
+  font-size: 1.5rem;
+}
+
+.popup form input[type="text"], .popup form textarea {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.popup form input[type="text"]:focus, .popup form textarea:focus {
+  outline: none;
+}
+
+.popup form textarea {
+  height: 150px;
+}
+
+.popup form input[type="button"] {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 1.3rem;
+  font-weight: 900;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.popup form input[type="button"]:hover {
+  cursor: pointer;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 /*# sourceMappingURL=style.css.map */

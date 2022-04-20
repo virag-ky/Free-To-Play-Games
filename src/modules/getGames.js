@@ -33,6 +33,7 @@ export default class FetchGamesApi {
       </div>
      </div>`;
 
+      const blurProjects = [...document.querySelectorAll(".card")];
       const comments = [...document.querySelectorAll(".comment")];
       const images = [...document.querySelectorAll(".card-images")];
       const h2 = [...document.querySelectorAll("h2")];
@@ -45,6 +46,8 @@ export default class FetchGamesApi {
             h2[i].textContent,
             description[i].textContent
           );
+          document.body.classList.toggle("no-scroll");
+          blurProjects.forEach((project) => project.classList.toggle("blur"));
         });
       }
     });
@@ -105,8 +108,12 @@ const createPopup = (image, title, description) => {
 
   const exitBtn = document.createElement("button");
   exitBtn.innerHTML = `<i class="fas fa-times"></i>`;
+  exitBtn.classList.add("exit");
   exitBtn.addEventListener("click", () => {
     div.remove();
+    document.body.classList.toggle("no-scroll");
+    const blurProjects = [...document.querySelectorAll(".card")];
+    blurProjects.forEach((project) => project.classList.toggle("blur"));
   });
 
   div.appendChild(exitBtn);
