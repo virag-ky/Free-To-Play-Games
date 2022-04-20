@@ -25,7 +25,7 @@ export default class FetchGamesApi {
       <div class="content">
        <div class="name-div">
         <h2>${e.title}</h2>
-        <span class="likes"><i class="fas fa-heart fa-lg"></i><span class="number-of-likes">5 Likes</span></span>
+        <span class="likes"><i class="fas fa-heart fa-lg"></i><span class="number-of-likes">577 Likes</span></span>
 
        </div>
        <p class="description">${e.short_description}</p>
@@ -46,6 +46,21 @@ export default class FetchGamesApi {
     return countItems;
   };
 }
+
+/* Create pop-up */
+
+const createPopup = (project) => {
+  console.log("hello");
+};
+
+const comments = [...document.querySelectorAll(".comment")];
+
+for (let i = 0; i < comments.length; i += 1) {
+  comments[i].addEventListener("click", () => {
+    createPopup(i);
+  });
+}
+
 /* export default class Overpass {
 static options = {
   method: 'GET',
