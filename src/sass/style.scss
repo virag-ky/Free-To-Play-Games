@@ -14,15 +14,23 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden;
+  font-family: 'Leto', sans-serif;
 }
 
 header {
-  font-family: 'Leto', sans-serif;
   display: flex;
   justify-content: center;
   }
+
+  h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    position: absolute;
+    left: 100px;
+  }
+
   
-  .menu-bar {
+  .menu-bar,h1 {
     border-radius: 25px;
     height: fit-content;
     display: inline-flex;
@@ -37,6 +45,7 @@ header {
       list-style: none;
       color: white;
       font-family: sans-serif;
+      font-size: 1.2rem;
       font-weight: bold;
       padding: 12px 16px;
       margin: 0 8px;
@@ -154,13 +163,9 @@ header {
 
 main {
 
-  background: url("../assets/images/2.svg");
-  background-repeat:no-repeat;
-  background-size: cover;
-  background-position: bottom right;
+  background: url("../assets/images/Circuit\ Board\ \(1\).svg");
   
- 
-  font-family: 'Lato',sans-serif;
+  
   .cards-section {
     padding: 150px 50px;
     display: grid;
@@ -192,7 +197,7 @@ main {
       justify-content: space-between;
       height: 330px;
       font-size: 1.1rem;
-      background: linear-gradient(rgb(1, 4, 27) 0%, rgb(12, 87, 77) 60%, rgb(55, 148, 143) , rgb(183, 224, 223));
+      background: linear-gradient(rgb(0, 17, 17) 0%, rgb(25, 119, 106) 60%, rgb(97, 170, 166) , rgb(183, 224, 223));
       
 
       .name-div {
@@ -231,15 +236,29 @@ main {
         border-radius: 5px;
         border: none;
         background: transparent;
-        box-shadow: 0 8px 12px rgb(55, 148, 143);
+        box-shadow: 0 10px 15px rgb(55, 148, 143);
         color: #ffffff;
         font-weight: 900;
 
         &:hover {
           cursor: pointer;
+          color: rgb(1, 41, 53);
+          box-shadow: 0 0 10px rgb(175, 233, 229);
         }
       }
     }
    }
+  }
+}
+
+footer {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #d2d1d3;
+  padding: 20px 100px;
+  background: rgb(38, 44, 42);
+  a {
+    text-decoration: none;
+    color: rgb(55, 148, 143);    
   }
 }

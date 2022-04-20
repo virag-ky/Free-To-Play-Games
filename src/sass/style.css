@@ -227,8 +227,8 @@ main .cards-section .card .content {
           justify-content: space-between;
   height: 330px;
   font-size: 1.1rem;
-  background: -webkit-gradient(linear, left top, left bottom, from(#01041b), color-stop(60%, #0c574d), color-stop(#37948f), to(#b7e0df));
-  background: linear-gradient(#01041b 0%, #0c574d 60%, #37948f, #b7e0df);
+  background: -webkit-gradient(linear, left top, left bottom, from(#01041b), color-stop(60%, #19776a), color-stop(#61aaa6), to(#b7e0df));
+  background: linear-gradient(#01041b 0%, #19776a 60%, #61aaa6, #b7e0df);
 }
 
 main .cards-section .card .content .name-div {
@@ -280,13 +280,16 @@ main .cards-section .card .content .comment {
   border-radius: 5px;
   border: none;
   background: transparent;
-  -webkit-box-shadow: 0 8px 12px #37948f;
-          box-shadow: 0 8px 12px #37948f;
+  -webkit-box-shadow: 0 10px 15px #37948f;
+          box-shadow: 0 10px 15px #37948f;
   color: #ffffff;
   font-weight: 900;
 }
 
 main .cards-section .card .content .comment:hover {
   cursor: pointer;
+  color: #012935;
+  -webkit-box-shadow: 0 0 10px #afe9e5;
+          box-shadow: 0 0 10px #afe9e5;
 }
 /*# sourceMappingURL=style.css.map */
