@@ -32,6 +32,21 @@ export default class FetchGamesApi {
        <button class="comment">Comments</button>
       </div>
      </div>`;
+
+      const comments = [...document.querySelectorAll(".comment")];
+      const images = [...document.querySelectorAll(".card-images")];
+      const h2 = [...document.querySelectorAll("h2")];
+      const description = [...document.querySelectorAll(".description")];
+
+      for (let i = 0; i < comments.length; i += 1) {
+        comments[i].addEventListener("click", () => {
+          createPopup(
+            images[i].getAttribute("src"),
+            h2[i].textContent,
+            description[i].textContent
+          );
+        });
+      }
     });
   };
 
@@ -48,18 +63,61 @@ export default class FetchGamesApi {
 }
 
 /* Create pop-up */
+const createPopup = (image, title, description) => {
+  const main = document.querySelector("main");
+  const div = document.createElement("div");
+  div.classList.add("popup");
 
-const createPopup = (project) => {
-  console.log("hello");
-};
+  const imageDiv = document.createElement("img");
+  imageDiv.src = image;
 
-const comments = [...document.querySelectorAll(".comment")];
+  const gameTitle = document.createElement("h2");
+  gameTitle.textContent = title;
 
-for (let i = 0; i < comments.length; i += 1) {
-  comments[i].addEventListener("click", () => {
-    createPopup(i);
+  const gameDescription = document.createElement("p");
+  gameDescription.textContent = description;
+
+  const h3 = document.createElement("h3");
+  h3.textContent = "Comments (1)";
+
+  const commentsList = document.createElement("ul");
+  commentsList.innerHTML = `<li>04/20/2022 Virag: This game is awesome!</li>`;
+
+  const form = document.createElement("form");
+  const h4 = document.createElement("h4");
+  h4.textContent = "Add a comment";
+
+  const nameInput = document.createElement("input");
+  nameInput.type = "text";
+  nameInput.placeholder = "Your name";
+
+  const textarea = document.createElement("textarea");
+  textarea.placeholder = "Your insights";
+
+  const submitCommentBtn = document.createElement("input");
+  submitCommentBtn.type = "button";
+  submitCommentBtn.value = "Comment";
+
+  form.appendChild(h4);
+  form.appendChild(nameInput);
+  form.appendChild(textarea);
+  form.appendChild(submitCommentBtn);
+
+  const exitBtn = document.createElement("button");
+  exitBtn.innerHTML = `<i class="fas fa-times"></i>`;
+  exitBtn.addEventListener("click", () => {
+    div.remove();
   });
-}
+
+  div.appendChild(exitBtn);
+  div.appendChild(imageDiv);
+  div.appendChild(gameTitle);
+  div.appendChild(gameDescription);
+  div.appendChild(h3);
+  div.appendChild(commentsList);
+  div.appendChild(form);
+  main.appendChild(div);
+};
 
 /* export default class Overpass {
 static options = {

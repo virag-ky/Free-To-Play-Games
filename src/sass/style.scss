@@ -262,3 +262,15 @@ footer {
     color: rgb(55, 148, 143);    
   }
 }
+
+
+.popup {
+  width: 85vw;
+  height: 90vh;
+  padding: 1.8rem 1.2rem 1rem 1.2rem;
+  background-color: #f3f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

@@ -309,4 +309,16 @@ footer a {
   text-decoration: none;
   color: #37948f;
 }
+
+.popup {
+  width: 85vw;
+  height: 90vh;
+  padding: 1.8rem 1.2rem 1rem 1.2rem;
+  background-color: #f3f1f1;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
 /*# sourceMappingURL=style.css.map */
