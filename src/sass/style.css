@@ -14,10 +14,10 @@ body {
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden;
+  font-family: 'Leto', sans-serif;
 }
 
 header {
-  font-family: 'Leto', sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -26,7 +26,14 @@ header {
           justify-content: center;
 }
 
-.menu-bar {
+h1 {
+  color: #fff;
+  font-size: 2.5rem;
+  position: absolute;
+  left: 100px;
+}
+
+.menu-bar, h1 {
   border-radius: 25px;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -44,10 +51,11 @@ header {
   margin: 50px 0 0 0;
 }
 
-.menu-bar li {
+.menu-bar li, h1 li {
   list-style: none;
   color: white;
   font-family: sans-serif;
+  font-size: 1.2rem;
   font-weight: bold;
   padding: 12px 16px;
   margin: 0 8px;
@@ -56,7 +64,7 @@ header {
   white-space: nowrap;
 }
 
-.menu-bar li::before {
+.menu-bar li::before, h1 li::before {
   content: " ";
   position: absolute;
   top: 0;
@@ -69,11 +77,11 @@ header {
   border-radius: 25px;
 }
 
-.menu-bar li:hover {
+.menu-bar li:hover, h1 li:hover {
   color: black;
 }
 
-.menu-bar li:hover::before {
+.menu-bar li:hover::before, h1 li:hover::before {
   background: -webkit-gradient(linear, left top, left bottom, from(#e8edec), to(#d2d1d3));
   background: linear-gradient(to bottom, #e8edec, #d2d1d3);
   -webkit-box-shadow: 0px 3px 20px 0px black;
@@ -174,21 +182,20 @@ b-content {
 
 /* Main section */
 main {
-  font-family: 'Lato',sans-serif;
+  background: url("../assets/images/Circuit Board (1).svg");
 }
 
 main .cards-section {
-  padding: 150px 0;
+  padding: 150px 50px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(400px, 1fr));
   row-gap: 150px;
   justify-items: center;
 }
 
 main .cards-section .card {
-  width: 400px;
+  width: 65%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -200,7 +207,6 @@ main .cards-section .card {
 
 main .cards-section .card .card-images {
   width: 100%;
-  height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
   border-top-left-radius: 10px;
@@ -208,7 +214,6 @@ main .cards-section .card .card-images {
 }
 
 main .cards-section .card .content {
-  border: 1px solid black;
   border-top: none;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
@@ -220,6 +225,13 @@ main .cards-section .card .content {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 330px;
+  font-size: 1.1rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(#001111), color-stop(60%, #19776a), color-stop(#61aaa6), to(#b7e0df));
+  background: linear-gradient(#001111 0%, #19776a 60%, #61aaa6, #b7e0df);
 }
 
 main .cards-section .card .content .name-div {
@@ -229,25 +241,194 @@ main .cards-section .card .content .name-div {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+main .cards-section .card .content .name-div h2 {
+  width: 80%;
+  color: #f0f3f2;
+}
+
+main .cards-section .card .content .name-div span {
+  color: #f0f3f2;
+}
+
+main .cards-section .card .content .name-div span i:hover {
+  cursor: pointer;
+}
+
+main .cards-section .card .content .likes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  gap: 10px;
 }
 
-main .cards-section .card .content .number-of-likes {
-  margin-left: auto;
-  margin-top: -20px;
-  margin-bottom: 20px;
+main .cards-section .card .content .description {
+  color: #e1e6e4;
 }
 
 main .cards-section .card .content .comment {
-  margin-top: 20px;
   padding: 10px;
   font-size: 1.2rem;
   border-radius: 5px;
+  border: none;
+  background: transparent;
+  -webkit-box-shadow: 0 10px 15px #37948f;
+          box-shadow: 0 10px 15px #37948f;
+  color: #ffffff;
+  font-weight: 900;
 }
 
 main .cards-section .card .content .comment:hover {
   cursor: pointer;
+  color: #012935;
+  -webkit-box-shadow: 0 0 10px #afe9e5;
+          box-shadow: 0 0 10px #afe9e5;
+}
+
+footer {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #d2d1d3;
+  padding: 20px 100px;
+  background: #262c2a;
+}
+
+footer a {
+  text-decoration: none;
+  color: #37948f;
+}
+
+.popup {
+  width: 85vw;
+  height: 90vh;
+  padding: 30px 50px;
+  background-color: #2e3130;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 20px;
+  border-radius: 20px;
+  overflow-y: scroll;
+  color: #d2d1d3;
+}
+
+.popup .exit {
+  background: transparent;
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 2rem;
+  color: #d2d1d3;
+}
+
+.popup .exit:hover {
+  cursor: pointer;
+}
+
+.popup img {
+  width: 80%;
+  border-radius: 20px;
+}
+
+.popup h2 {
+  font-size: 2.8rem;
+}
+
+.popup p {
+  font-size: 1.5rem;
+}
+
+.popup h3 {
+  font-size: 1.6rem;
+}
+
+.popup ul > li {
+  list-style: none;
+  font-style: italic;
+  font-size: 1.2rem;
+}
+
+.popup form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 10px;
+  width: 50%;
+}
+
+.popup form h4 {
+  font-size: 1.5rem;
+}
+
+.popup form input[type="text"], .popup form textarea {
+  width: 100%;
+  font-size: 1.2rem;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.popup form input[type="text"]:focus, .popup form textarea:focus {
+  outline: none;
+}
+
+.popup form textarea {
+  height: 150px;
+}
+
+.popup form input[type="button"] {
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  font-size: 1.3rem;
+  font-weight: 900;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.popup form input[type="button"]:hover {
+  cursor: pointer;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.blur {
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 /*# sourceMappingURL=style.css.map */
