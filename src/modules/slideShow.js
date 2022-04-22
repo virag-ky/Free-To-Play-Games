@@ -18,7 +18,7 @@ function showDivs(n) {
 showDivs(slideIndex);
 
 function plusDivs(n) {
-  showDivs(slideIndex += n);
+  showDivs((slideIndex += n));
 }
 
 let myIndex = 0;
@@ -40,4 +40,4 @@ function carousel() {
 
 carousel();
 
-export { plusDivs };
+export default plusDivs;

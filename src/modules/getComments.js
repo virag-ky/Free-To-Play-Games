@@ -1,18 +1,21 @@
 export default class Comments {
   static commentsKeyID =
-    "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gzuVGjybCPx7DImkOsad/comments";
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gzuVGjybCPx7DImkOsad/comments';
+
   static commentApiEndpoint =
-    "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gzuVGjybCPx7DImkOsad/comments";
-  static gameAPI = "https://free-to-play-games-database.p.rapidapi.com/api";
-  static commentPopup = document.querySelector(".comment-popup");
+    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/gzuVGjybCPx7DImkOsad/comments';
+
+  static gameAPI = 'https://free-to-play-games-database.p.rapidapi.com/api';
+
+  static commentPopup = document.querySelector('.comment-popup');
 
   static getGameComment = async (gameID) => {
     const response = await fetch(`${this.commentsKeyID}?item_id=${gameID}`);
     return response.json();
   };
-  
+
   static commentCounter = (data) => (typeof (data) === 'object' ? data.length : 'invalid');
-  
+
   static getTotalComments = async (gameID) => {
     const result = await this.getGameComment(gameID)
       .then((comment) => (!comment.error ? comment.length : 0))
@@ -22,51 +25,46 @@ export default class Comments {
 
   static updateCommentCounter = async (gameID) => {
     await this.getTotalComments(gameID).then((totalComment) => {
-      this.commentPopup.querySelector(".total-comments").innerHTML =
-        totalComment;
+      this.commentPopup.querySelector('.total-comments').innerHTML = totalComment;
     });
   };
 
-  static get = (url) =>
-    fetch(url, {
-      method: "GET",
-      headers: {
-        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-        "X-RapidAPI-Key": "838b0eeb18msh840203b450993abp154a9fjsnea041f3d274c",
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => data)
-      .catch((error) => error);
+  static get = (url) => fetch(url, {
+    method: 'GET',
+    headers: {
+      'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+      'X-RapidAPI-Key': '838b0eeb18msh840203b450993abp154a9fjsnea041f3d274c',
+    },
+  })
+    .then((res) => res.json())
+    .then((data) => data)
+    .catch((error) => error);
 
   static getGameData = async (gameID) => {
     const options = {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-        "X-RapidAPI-Key": "838b0eeb18msh840203b450993abp154a9fjsnea041f3d274c",
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+        'X-RapidAPI-Key': '838b0eeb18msh840203b450993abp154a9fjsnea041f3d274c',
       },
     };
     const response = await this.get(
       `${this.gameAPI}/game?id=${gameID}`,
-      options
+      options,
     );
     return response;
   };
 
-  static post = (url, params = {}) =>
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(params),
-    })
-      .then((res) => res.text())
-      .then((data) =>
-        data.error ? { error: true, info: data } : { error: false, info: data }
-      )
-      .catch((error) => ({ error: true, info: error }));
+  static post = (url, params = {}) => fetch(url, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(params),
+  })
+    .then((res) => res.text())
+    .then((data) => (data.error ? { error: true, info: data } : { error: false, info: data }))
+    .catch((error) => ({ error: true, info: error }));
 
   static addComment = async (params) => {
     const response = await this.post(this.commentApiEndpoint, params);
@@ -74,29 +72,29 @@ export default class Comments {
   };
 
   static displayGameComments = (data) => {
-    this.commentPopup.querySelector(".comments").innerHTML = data;
+    this.commentPopup.querySelector('.comments').innerHTML = data;
   };
 
   static showComments = (gameID) => {
     this.getGameComment(gameID).then((data) => {
       if (!data.error) {
-        let comments = "";
+        let comments = '';
         data.forEach((comment) => {
           comments += `<li class="comments-list">${comment.creation_date} <span> ${comment.username}:</span>  ${comment.comment}</li>`;
         });
         this.displayGameComments(comments);
       } else {
-        this.displayGameComments("No comment posted yet.");
+        this.displayGameComments('No comment posted yet.');
       }
     });
   };
 
   static closeCommentPopup = () => {
-    document.querySelector("#close").addEventListener("click", () => {
-      this.commentPopup.style.display = "none";
-      this.commentPopup.innerHTML = "";
-      //document.body.style.overflow = "visible";
-      document.body.classList.remove("no-scroll");
+    document.querySelector('#close').addEventListener('click', () => {
+      this.commentPopup.style.display = 'none';
+      this.commentPopup.innerHTML = '';
+      // document.body.style.overflow = "visible";
+      document.body.classList.remove('no-scroll');
     });
   };
 
@@ -142,8 +140,8 @@ export default class Comments {
     </div>
   </div>`;
       this.showComments(gameID);
-      const form = this.commentPopup.querySelector(".form");
-      form.addEventListener("submit", (e) => {
+      const form = this.commentPopup.querySelector('.form');
+      form.addEventListener('submit', (e) => {
         e.preventDefault();
         const user = form.elements.name.value;
         const description = form.elements.description.value;
@@ -158,7 +156,7 @@ export default class Comments {
         });
       });
     });
-    this.commentPopup.style.display = "block";
+    this.commentPopup.style.display = 'block';
     this.closeCommentPopup();
   };
 }

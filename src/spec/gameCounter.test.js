@@ -1,5 +1,5 @@
-import FetchGamesApi from './../modules/getGames';
-// Arrange 
+import FetchGamesApi from '../modules/getGames.js';
+// Arrange
 describe('Game counter test', () => {
   const mockGameArr = [
     {
@@ -9,7 +9,7 @@ describe('Game counter test', () => {
       id: 23,
     },
   ];
-    // Act
+  // Act
   const counter = FetchGamesApi.gamesCounter(mockGameArr);
 
   // Assert
@@ -17,9 +17,9 @@ describe('Game counter test', () => {
 });
 
 test('should return empty array if there is no data ', () => {
-    // Arrange
+  // Arrange
   const mockArr = [];
-   // Act
+  // Act
   const counter = FetchGamesApi.gamesCounter(mockArr);
   // Assert
   expect(counter).toBe(0);

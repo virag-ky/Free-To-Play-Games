@@ -1,16 +1,17 @@
-import Likes from "../modules/getLikes.js";
+import Likes from './getLikes.js';
+
 export default class FetchGamesApi {
   static getGamesFetch = async () => {
     const options = {
-      method: "GET",
+      method: 'GET',
       headers: {
-        "X-RapidAPI-Host": "free-to-play-games-database.p.rapidapi.com",
-        "X-RapidAPI-Key": "838b0eeb18msh840203b450993abp154a9fjsnea041f3d274c",
+        'X-RapidAPI-Host': 'free-to-play-games-database.p.rapidapi.com',
+        'X-RapidAPI-Key': '838b0eeb18msh840203b450993abp154a9fjsnea041f3d274c',
       },
     };
     return fetch(
-      "https://free-to-play-games-database.p.rapidapi.com/api/games?category=shooter",
-      options
+      'https://free-to-play-games-database.p.rapidapi.com/api/games?category=shooter',
+      options,
     ).then((response) => response.json());
   };
 
@@ -18,7 +19,7 @@ export default class FetchGamesApi {
     const movie = await this.getGamesFetch();
     const gamesData = movie.slice(0, 40).map((item) => item);
     document.querySelectorAll('.game-counter').forEach((elem) => {
-      elem.innerHTML= this.gamesCounter(gamesData)
+      elem.innerHTML = this.gamesCounter(gamesData);
     });
     await this.gamesRender(gamesData);
   };
@@ -26,7 +27,7 @@ export default class FetchGamesApi {
   static gamesRender = async (gamesData) => {
     gamesData.forEach(async (e) => {
       const likes = await Likes.updateLikes(e.id);
-      const gameList = document.getElementById("cards");
+      const gameList = document.getElementById('cards');
       gameList.innerHTML += `
       <div class="card">
       <img src="${e.thumbnail}" alt="Thumbnail" class="card-images">
@@ -50,27 +51,21 @@ export default class FetchGamesApi {
   };
 
   static createGameID = async () => {
-    const requestURL =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/";
+    const requestURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     const result = await fetch(`${requestURL}apps/`, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-type": "application/json; charset=UTF-8",
+        'Content-type': 'application/json; charset=UTF-8',
       },
     }).then((response) => response.text());
     return result;
   };
 
   static createGameID2 = async () => {
-    const requestURL =
-      "https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/";
+    const requestURL = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/';
     const options = {
-      method: "POST",
+      method: 'POST',
     };
-    fetch(`${requestURL}apps/`, options)
-      .then((response) => response.json())
-      .then((response) => {
-        console.log(response);
-      });
+    fetch(`${requestURL}apps/`, options).then((response) => response.json());
   };
 }
