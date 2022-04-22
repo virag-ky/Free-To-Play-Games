@@ -56,6 +56,19 @@ npm install sass-loader sass webpack --save-dev
 ```
 npm install file-loader --save-dev
 ```
+#### Install Jest
+```
+npm install jest
+```
+#### Install @babel/plugin-transform-modules-commonjs
+```
+npm install --save-dev @babel/plugin-transform-modules-commonjs
+```
+### Run the tests
+```
+npm test
+```
+
 ### Build the app
 ```
 npm run build
