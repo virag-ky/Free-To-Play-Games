@@ -16,8 +16,11 @@
 ## Screenshot
 ### Mobile
 
+![Screenshot from 2022-04-22 22-25-29](https://user-images.githubusercontent.com/79658534/164787623-18bce59c-c2c5-4cfc-a38e-abee1ef96274.png)
 
 ### Desktop
+![Screenshot from 2022-04-22 22-23-24](https://user-images.githubusercontent.com/79658534/164787643-7448f4bc-f233-46a8-b681-7aa68b72c010.png)
+![Screenshot from 2022-04-22 22-24-14](https://user-images.githubusercontent.com/79658534/164787651-13f37022-a253-405e-b2ef-7330d408227a.png)
 
 
 
