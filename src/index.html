@@ -6,27 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Free-To-Play-Games</title>
     <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
       rel="icon"
       href="https://cdn-icons-png.flaticon.com/512/2991/2991606.png"
     />
-    <script
-      src="https://kit.fontawesome.com/e1fe8e6842.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
-
   <body>
-    <header class="header">
+    <header>
       <nav class="navbar">
         <ul class="menu-bar">
           <li class="checker">Home</li>
-          <li>Games</li>
-          <li>Contact</li>
+          <li class="games"><a href="#cards">Games</a></li>
+          <li class="contact">Contact</li>
         </ul>
       </nav>
 
       <div class="b-content">
-        <h1>Free-To-Play Games</h1>
         <img
           class="mySlides"
           src="./assets/images/image11.png"
@@ -93,8 +103,10 @@
       </div>
     </header>
 
-    <main id="game-cards">
-      <section class="cards-section"></section>
+    <main>
+      <section id="cards" class="cards-section"></section>
+
+      <section class="comment-popup"></section>
     </main>
     <footer>
       <p>
@@ -104,7 +116,6 @@
         <a href="https://github.com/SaidRasinlic" target="_blank"
           >Said Rasinlic</a
         >
-        under CC license
       </p>
     </footer>
   </body>

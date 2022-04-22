@@ -1,3 +1,5 @@
+@import 'base';
+
 html {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -10,40 +12,50 @@ html {
   box-sizing: inherit;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+  * {
+    scroll-behavior: smooth;
+  }
+}
+
 body { 
   margin: 0 !important;
   padding: 0 !important;
   overflow-x: hidden;
   font-family: 'Leto', sans-serif;
+  background-image: url("../assets/images/2754788.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+
+  @include media-sm {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 header {
   display: flex;
   justify-content: center;
   }
-
-  h1 {
-    color: #fff;
-    font-size: 2.5rem;
-    position: absolute;
-    left: 100px;
-  }
- 
   
-  .menu-bar,h1 {
+  .menu-bar {
     border-radius: 25px;
     height: fit-content;
     display: inline-flex;
+    color: #e8edec;
     background-color: rgba(0, 0, 0, .4);
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);  
     align-items: center;
     padding: 0 10px;
-    margin: 50px 0 0 0;
+    margin-top: 50px;
+
+    @include media-sm {
+      margin-top: 0;
+    }
 
     li {
       list-style: none;
-      color: white;
       font-family: sans-serif;
       font-size: 1.2rem;
       font-weight: bold;
@@ -52,6 +64,19 @@ header {
       position: relative;
       cursor: pointer;
       white-space: nowrap;
+
+      @include media-sm {
+        font-size: 1rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: #e8edec;
+
+        &:hover {
+          color: #000;
+        }
+      }
 
       &::before {
         content: " ";
@@ -73,6 +98,7 @@ header {
           }
           color: black;
       }
+  
     }
   }
   
@@ -147,13 +173,17 @@ header {
 .mySlides {
   width: 100vw;
   height: 100vh;
+
+  @include media-sm {
+    height: 350px;
+  }
 }
 
 .navbar {
+  @include center;
+
     position: absolute;
-    display: flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: space-between;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
@@ -162,11 +192,6 @@ header {
 /* Main section */
 
 main {
-
-  background: url("../assets/images/2754788.jpg");
-  background-position: center;
-  background-attachment: fixed;
-  
   
   .cards-section {
     padding: 150px 50px;
@@ -174,12 +199,22 @@ main {
     grid-template-columns: repeat(3, minmax(400px, 1fr));
     row-gap: 150px;
     justify-items: center;
+
+    @include media-sm {
+      grid-template-columns: 1fr;
+      padding: 100px 20px;
+    }
     
     .card {
       width: 65%;
-      display: flex;
-      flex-direction: column;
       
+      @include center;
+
+      align-items: unset;
+
+      @include media-sm {
+        width: 100%;
+      }
 
     .card-images {
       width: 100%;
@@ -189,7 +224,6 @@ main {
     }
 
     .content {
-      
       border-top: none;
       border-bottom-left-radius: 10px;
       border-bottom-right-radius: 10px;
@@ -212,7 +246,7 @@ main {
           color: #f0f3f2;
         }
 
-        span {
+        .like-wrapper {
           color: #f0f3f2;
 
           i:hover {
@@ -222,17 +256,16 @@ main {
       }
 
       .likes {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
         gap: 10px;
+
+        @include center;
       }
 
       .description {
         color: rgb(225, 230, 228);
       }
 
-      .comment {
+      .comment-btn {
         padding: 10px;
         font-size: 1.2rem;
         border-radius: 5px;
@@ -261,13 +294,21 @@ footer {
   background: rgb(38, 44, 42);
   a {
     text-decoration: none;
-    color: rgb(55, 148, 143);    
+    color: rgb(11, 241, 230);    
+  }
+
+  @include media-sm {
+    width: 100%;
+    padding: 5px;
+    font-size: 1rem;
+    display: flex;
+    justify-content: center;
   }
 }
 
 
 .popup {
-  width: 85vw;
+  width: 60vw;
   height: 90vh;
   padding: 30px 50px;
   background-color: #2e3130;
@@ -275,16 +316,20 @@ footer {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: space-between;
   gap: 20px;
   border-radius: 20px;
   overflow-y: scroll;
   color: #d2d1d3;
 
-  .exit {
+  @include center;
+
+  @include media-sm {
+    width: 95%;
+    padding: 20px 20px;
+  }
+
+  #close {
     background: transparent;
     border: none;
     align-self: flex-end;
@@ -296,36 +341,108 @@ footer {
     }
   }
 
+  .display {
+    @include center;
+
+  .description {
+    width: 80%;
+
+    @include center;
+
+    @include media-sm {
+      width: 100%;
+    }
+
   img {
     width: 80%;
     border-radius: 20px;
-  }
 
-  h2 {
-    font-size: 2.8rem;
-  }
-
-  p {
-    font-size: 1.5rem;
-
+    @include media-sm {
+      width: 100%;
+    }
   }
 
   h3 {
-    font-size: 1.6rem;
+    font-size: 2.8rem;
+
+    @include media-sm {
+      font-size: 2rem;
+    }
+  }
+
+}
+
+ .display-detail {
+   width: 80%;
+
+   @include center;
+
+   @include media-sm {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 1.7rem;
+
+    @include media-sm {
+      font-size: 1.5rem;
+    }
   }
 
   ul > li {
     list-style: none;
-    font-style: italic;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    padding-bottom: 15px;
+    line-height: 1.2;
+
+    @include media-sm {
+      font-size: 1.1rem;
+    }
   }
+}
+  }
+
+  .comment-container {
+   @include center;
+
+    .comment-display {
+      @include center;
+
+      h3 {
+        font-size: 1.4rem;
+      }
+      ul {
+        list-style: none;
+        font-style: italic;
+        font-size: 1.2rem;
+
+        @include media-sm {
+          font-size: 1rem;
+        }
+      }
+
+    }
+  
+    .comment {
+      width: 70%;
+
+      @include center;
+
+      @include media-sm {
+        width: 100%;
+      }
+
+      h3 {
+        font-size: 1.4rem;
+        margin-top: 50px;
+      }
 
   form {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 10px;
-    width: 50%;
+    width: 100%;
+    
 
     h4 {
       font-size: 1.5rem;
@@ -347,7 +464,7 @@ footer {
       height: 150px;
     }
 
-    input[type="button"] {
+    .submit-btn {
       align-self: flex-start;
       font-size: 1.3rem;
       font-weight: 900;
@@ -358,6 +475,13 @@ footer {
       &:hover {
         cursor: pointer;
       }
+
+      @include media-sm {
+        font-size: 1.1rem;
+        padding: 5px;
+      }
+    }
+    }
     }
   }
 }
@@ -367,9 +491,5 @@ footer {
 }
 
 .blur {
-  filter: blur(15px);
+  filter: blur(5px);
 }
-
-
-
-

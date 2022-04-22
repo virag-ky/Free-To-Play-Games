@@ -1,0 +1,11 @@
+@mixin media-sm {
+  @media (max-width: 600px) {
+    @content;
+  }
+}
+
+@mixin center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
