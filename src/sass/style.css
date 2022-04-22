@@ -225,7 +225,7 @@ main .cards-section {
   padding: 150px 50px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(400px, 1fr))[3];
+  -ms-grid-columns: (minmax(400px, 1fr));
       grid-template-columns: repeat(3, minmax(400px, 1fr));
   row-gap: 150px;
   justify-items: center;

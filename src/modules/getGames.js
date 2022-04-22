@@ -17,6 +17,9 @@ export default class FetchGamesApi {
   static executor = async () => {
     const movie = await this.getGamesFetch();
     const gamesData = movie.slice(0, 40).map((item) => item);
+    document.querySelectorAll('.game-counter').forEach((elem) => {
+      elem.innerHTML= this.gamesCounter(gamesData)
+    });
     await this.gamesRender(gamesData);
   };
 

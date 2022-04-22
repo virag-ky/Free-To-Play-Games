@@ -23,14 +23,88 @@ body {
   padding: 0 !important;
   overflow-x: hidden;
   font-family: 'Leto', sans-serif;
-  background-image: url("../assets/images/2754788.jpg");
+  background-image: url("../assets/images/ps.jpg");
   background-size: cover;
   background-attachment: fixed;
 
   @include media-sm {
     background-repeat: no-repeat;
     background-position: center;
+    .b-content,
+    .desktop-nav {
+      display: none;
+    }
+    
+    .logo {
+      width: 64px;
+      height: 64px;
+    }
+
+    .mobile-nav {
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: space-between;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.4);
+      padding: 10px 20px;
   }
+  
+  .fa.fa-bars {
+    color: black;
+    margin-top: 15px;
+}
+
+  .mobile-nav a {
+    text-decoration: none;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 20px;
+    color: #6070ff;
+    text-decoration-line: none;
+  }
+  
+  .mobile-item {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: rgb(21 21 22 / 93%);
+    text-align: left;
+    display: none;
+  }
+  
+  .mobile-item .close a {
+    font-weight: lighter;
+    font-size: 12px;
+  }
+  
+  
+  .mobile-item .close {
+    padding-top: 50px;
+    text-align: right;
+    padding-right: 38px;
+    font-weight: lighter;
+  }
+  
+  .mobile-item a {
+    color: #fff;
+  }
+  
+  .mobile-nav a {
+    font-size: 32px;
+  }
+  
+  .mobile-nav-item {
+    padding: 15px 28px; 
+  }
+}
+}
+
+.mobile-nav {
+  display: none;
 }
 
 header {
@@ -234,7 +308,9 @@ main {
       height: 330px;
       font-size: 1.1rem;
       background: linear-gradient(rgb(0, 17, 17) 0%, rgb(25, 119, 106) 60%, rgb(97, 170, 166) , rgb(183, 224, 223));
-      
+      // background-image: url("../assets/images/unsplash.jpg");
+      // background-size: cover;
+      // background-attachment: fixed;
 
       .name-div {
         display: flex;
@@ -492,4 +568,28 @@ footer {
 
 .blur {
   filter: blur(5px);
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb { /* stylelint-disable-line */
+  border-radius: 10px; /* stylelint-disable-line */
+  background-color: black; /* stylelint-disable-line */
+  background-image: -webkit-linear-gradient 90deg, transparent, rgba(0, 0, 0, 0.4) 50%, transparent, transparent; /* stylelint-disable-line */
+}
+
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.57);
+}
+
+:-webkit-scrollbar-track {
+  border: 1px solid black;
+  background-color: #f5f5f5;
+}
+
+.fas {
+  color: red;
 }

@@ -8,6 +8,9 @@
     "build": "webpack",
     "dev": "webpack serve --open"
   },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/virag-ky/Free-To-Play-Games.git"
@@ -23,6 +26,7 @@
     "css-loader": "^6.7.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest-webpack": "^0.5.1",
     "sass": "^1.50.1",
     "sass-loader": "^12.6.0",
     "style-loader": "^3.3.1",

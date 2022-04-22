@@ -10,7 +10,9 @@ export default class Comments {
     const response = await fetch(`${this.commentsKeyID}?item_id=${gameID}`);
     return response.json();
   };
-
+  
+  static commentCounter = (data) => (typeof (data) === 'object' ? data.length : 'invalid');
+  
   static getTotalComments = async (gameID) => {
     const result = await this.getGameComment(gameID)
       .then((comment) => (!comment.error ? comment.length : 0))
