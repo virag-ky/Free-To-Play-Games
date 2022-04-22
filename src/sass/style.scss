@@ -163,7 +163,9 @@ header {
 
 main {
 
-  background: url("../assets/images/Circuit\ Board\ \(1\).svg");
+  background: url("../assets/images/2754788.jpg");
+  background-position: center;
+  background-attachment: fixed;
   
   
   .cards-section {
@@ -365,7 +367,7 @@ footer {
 }
 
 .blur {
-  filter: blur(5px);
+  filter: blur(15px);
 }
 
 
