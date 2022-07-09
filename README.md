@@ -105,5 +105,5 @@ Give a ⭐️ if you like this project!
 
 ## 📝 License
 
-This project is [MIT](./LICENCE) licensed.
+This project is [MIT](https://github.com/virag-ky/Free-To-Play-Games/blob/main/LICENSE) licensed.
 
